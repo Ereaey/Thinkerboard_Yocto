@@ -17,3 +17,11 @@
 	path = layers/meta-rust
 	url = git://github.com/meta-rust/meta-rust.git
 	branch = rocko
+[submodule "layers/--force"]
+	path = layers/--force
+	url = https://github.com/meta-qt5/meta-qt5
+	branch = dunfell
+[submodule "layers/meta-qt5"]
+	path = layers/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5
+	branch = dunfell
