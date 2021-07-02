@@ -13,3 +13,7 @@
 [submodule "layers/meta-rockchip"]
 	path = layers/meta-rockchip
 	url = https://github.com/rockchip-linux/meta-rockchip.git
+[submodule "layers/meta-qt5"]
+	path = layers/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5
+	branch = dunfell
