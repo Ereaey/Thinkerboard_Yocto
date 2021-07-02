@@ -23,13 +23,18 @@ RUN groupadd -g $host_gid $USER_NAME && \
     
 USER $USER_NAME
 
-ENV BUILD_INPUT_DIR media/anthony/Divers/tmp/input
-ENV BUILD_OUTPUT_DIR media/anthony/Divers/tmp/output
+ENV BUILD_INPUT_DIR /home/anthony/tmp/input
+ENV BUILD_OUTPUT_DIR /home/anthony/tmp/output
 RUN mkdir -p $BUILD_INPUT_DIR $BUILD_OUTPUT_DIR
 
 WORKDIR $BUILD_INPUT_DIR
 RUN git clone --recurse-submodules https://github.com/Ereaey/$PROJECT
 
+WORKDIR $BUILD_INPUT_DIR/$PROJECT
+RUN git submodule init
+RUN git submodule update --recursive
+
+
 WORKDIR $BUILD_OUTPUT_DIR
 CMD source $BUILD_INPUT_DIR/$PROJECT/layers/poky/oe-init-build-env $BUILD_INPUT_DIR/$PROJECT/build-tinkerboard \
-    build && bitbake $PROJECT-image
+bitbake core-image-minimal
