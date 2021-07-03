@@ -35,6 +35,6 @@ RUN git submodule init
 RUN git submodule update --recursive
 
 
-WORKDIR $BUILD_OUTPUT_DIR
-CMD source $BUILD_INPUT_DIR/$PROJECT/layers/poky/oe-init-build-env $BUILD_INPUT_DIR/$PROJECT/build-tinkerboard \
-    build && bitbake $PROJECT-image
+#WORKDIR $BUILD_INPUT_DIR/$PROJECT
+#CMD source $BUILD_INPUT_DIR/$PROJECT/layers/poky/oe-init-build-env $BUILD_INPUT_DIR/$PROJECT/build-tinkerboard \
+#bitbake core-image-minimal
