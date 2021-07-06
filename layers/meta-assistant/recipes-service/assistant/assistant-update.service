@@ -1,0 +1,8 @@
+[Unit]
+Description=Update assistant
+
+[Service]
+Restart=always
+RestartSec=1800s
+ExecStart=/bin/bash /home/user/script.sh
+
