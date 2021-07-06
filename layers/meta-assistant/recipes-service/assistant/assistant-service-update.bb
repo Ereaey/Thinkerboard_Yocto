@@ -1,3 +1,10 @@
+DESCRIPTION = "Add service auto update assistant"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "\
+	file://LICENSE;md5=efab06594070f714e6e655a25c330fcd \
+"
+
+
 inherit systemd
 SYSTEMD_AUTO_ENABLE = "enable"
 SYSTEMD_SERVICE_${PN} = "assistant-update.service"
